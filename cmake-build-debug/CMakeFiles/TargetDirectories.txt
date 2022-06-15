@@ -1,0 +1,3 @@
+/Users/jun/Documents/Udacity/MemoryManagement/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/jun/Documents/Udacity/MemoryManagement/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/jun/Documents/Udacity/MemoryManagement/cmake-build-debug/CMakeFiles/MemoryManagement.dir
