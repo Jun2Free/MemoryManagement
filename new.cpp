@@ -33,9 +33,10 @@ int main() {
 
     // allocate memory using new
     MyClass *myClass = new MyClass();
-    // new 로 메모리 할당을 하는 경우, 자동적으로 constructor 가 실행된다.
+    // new 로 메모리 할당을 하는 경우, 자동적으로 constructor 를 call 한다.
     myClass->setNumber(42);
     delete myClass;
+    // new 와 마찬가지로 delete 는 destructor 를 call 한다.
 
     return 0;
 }

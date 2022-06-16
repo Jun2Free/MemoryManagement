@@ -72,8 +72,8 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 
 build cmake_object_order_depends_target_MemoryManagement: phony || CMakeFiles/MemoryManagement.dir
 
-build CMakeFiles/MemoryManagement.dir/time.cpp.o: CXX_COMPILER__MemoryManagement_Debug /Users/jun/Documents/Udacity/MemoryManagement/time.cpp || cmake_object_order_depends_target_MemoryManagement
-  DEP_FILE = CMakeFiles/MemoryManagement.dir/time.cpp.o.d
+build CMakeFiles/MemoryManagement.dir/leaks.cpp.o: CXX_COMPILER__MemoryManagement_Debug /Users/jun/Documents/Udacity/MemoryManagement/leaks.cpp || cmake_object_order_depends_target_MemoryManagement
+  DEP_FILE = CMakeFiles/MemoryManagement.dir/leaks.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/MemoryManagement.dir
   OBJECT_FILE_DIR = CMakeFiles/MemoryManagement.dir
@@ -86,7 +86,7 @@ build CMakeFiles/MemoryManagement.dir/time.cpp.o: CXX_COMPILER__MemoryManagement
 #############################################
 # Link the executable MemoryManagement
 
-build MemoryManagement: CXX_EXECUTABLE_LINKER__MemoryManagement_Debug CMakeFiles/MemoryManagement.dir/time.cpp.o
+build MemoryManagement: CXX_EXECUTABLE_LINKER__MemoryManagement_Debug CMakeFiles/MemoryManagement.dir/leaks.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/MemoryManagement.dir
   POST_BUILD = :
