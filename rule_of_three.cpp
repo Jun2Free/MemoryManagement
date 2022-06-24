@@ -41,13 +41,45 @@ public:
         std::cout << "ASSIGNING content of instance " << &source << " to instance " << this << std::endl;
         return *this;
     }
+
+    MyMovableClass(MyMovableClass &&source) // 4 : move constructor
+    {
+        std::cout << "MOVING (c’tor) instance " << &source << " to instance " << this << std::endl;
+        _data = source._data;
+        _size = source._size;
+        source._data = nullptr;  // redirection and the ownership has successfully changed.
+        source._size = 0;
+    }
+
+    MyMovableClass &operator=(MyMovableClass &&source) // 5 : move assignment operator
+    {
+        std::cout << "MOVING (assign) instance " << &source << " to instance " << this << std::endl;
+        if (this == &source)
+            return *this;
+
+        delete[] _data;
+
+        _data = source._data;
+        _size = source._size;
+
+        source._data = nullptr;
+        source._size = 0;
+
+        return *this;
+    }
 };
+
+MyMovableClass createObject(int size){
+    MyMovableClass obj(size); // regular constructor
+    return obj; // return MyMovableClass object by value
+}
 
 int main()
 {
     MyMovableClass obj1(10); // regular constructor
     MyMovableClass obj2(obj1); // copy constructor
     obj2 = obj1; // copy assignment operator
+    MyMovableClass obj4 = createObject(10);
 
     return 0;
 }
