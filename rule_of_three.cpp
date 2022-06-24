@@ -74,12 +74,37 @@ MyMovableClass createObject(int size){
     return obj; // return MyMovableClass object by value
 }
 
+void useObject(MyMovableClass obj)
+{
+    std::cout << "using object " << &obj << std::endl;
+}
+
+// main for copying resources
+/*
 int main()
 {
-    MyMovableClass obj1(10); // regular constructor
-    MyMovableClass obj2(obj1); // copy constructor
-    obj2 = obj1; // copy assignment operator
-    MyMovableClass obj4 = createObject(10);
+    MyMovableClass obj1(100), obj2(200); // constructor
+
+    MyMovableClass obj3(obj1); // copy constructor
+
+    MyMovableClass obj4 = obj1; // copy constructor
+
+    obj4 = obj2; // copy assignment operator
+
+    return 0;
+}
+ */
+
+// main for moving resources
+int main() {
+    MyMovableClass obj1(100); // constructor
+
+    //obj1 = MyMovableClass(200); // move assignment operator
+    useObject(obj1);
+
+    MyMovableClass obj2 = MyMovableClass(200); // move constructor
+
+    useObject(std:: move(obj2));
 
     return 0;
 }
